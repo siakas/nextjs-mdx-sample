@@ -32,6 +32,7 @@ const GlobalStyle = () => {
       overflow-wrap: break-word;
       word-break: break-word;
       cursor: initial;
+      scroll-behavior: smooth;
     }
 
     body {
