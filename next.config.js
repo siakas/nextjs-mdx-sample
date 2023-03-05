@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const remarkHeadingId = require('remark-heading-id')
+
 const nextConfig = {
   reactStrictMode: true,
 
@@ -13,7 +15,7 @@ const withMDX = require('@next/mdx')({
     // If you use remark-gfm, you'll need to use next.config.mjs
     // as the package is ESM only
     // https://github.com/remarkjs/remark-gfm#install
-    remarkPlugins: [],
+    remarkPlugins: [remarkHeadingId],
     rehypePlugins: [],
     // `MDXProvider` を使う場合はコメントを外すこと
     // providerImportSource: "@mdx-js/react",
