@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  compiler: {
-    emotion: true,
-  },
 
   // MDX 利用のために追加
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
