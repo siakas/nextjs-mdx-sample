@@ -18,7 +18,7 @@ const withMDX = require('@next/mdx')({
     remarkPlugins: [remarkHeadingId],
     rehypePlugins: [],
     // `MDXProvider` を使う場合はコメントを外すこと
-    // providerImportSource: "@mdx-js/react",
+    providerImportSource: '@mdx-js/react',
   },
 })
 
