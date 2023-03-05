@@ -1,0 +1,43 @@
+import DefaultLayout from '@/layouts/DefaultLayout'
+import RankingTable from '@/components/RankingTable'
+
+export const meta = {
+  title: '10月のお気に入り数ランキング',
+}
+
+export const rankingData = [
+  {
+    slug: '2022-ogp-image',
+    title: '攻略、OGP画像作成',
+  },
+  {
+    slug: '2022-css-full-width-background',
+    title: '画面幅いっぱいに背景色を敷くCSS実装',
+  },
+  {
+    slug: '2022-astro',
+    title: '今すぐ始めるAstro入門',
+  },
+  {
+    slug: '2021-github-actions',
+    title: 'GitHub Actionsで効率的な作業を目指す',
+  },
+  {
+    slug: '2021-nextjs',
+    title: 'これから始める、Next.js',
+  },
+]
+
+## 今月の注目記事の紹介
+
+今月、お気に入り追加数の多かった**記事ランキング**の発表です。
+
+<RankingTable month="2022年10月" rankingData={rankingData} />
+
+### 新登場の記事
+
+今月新登場だった記事は（以下略）
+
+export default ({ children }) => (
+  <DefaultLayout meta={meta}>{children}</DefaultLayout>
+)
