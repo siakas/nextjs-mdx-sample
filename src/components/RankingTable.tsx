@@ -16,7 +16,7 @@ const RankingTable: FC<Props> = ({ month, rankingData }) => {
   }
 
   return (
-    <table className="leading-normal my-8">
+    <table className="my-8 leading-normal">
       <caption className="text-center text-xs font-semibold text-gray-600">
         {month}のお気に入り数ランキング
       </caption>
@@ -25,11 +25,11 @@ const RankingTable: FC<Props> = ({ month, rankingData }) => {
           <tr key={item.slug}>
             <th
               style={{ color: fontColor[index + 1] || 'currentColor' }}
-              className="px-5 py-5 border-b border-gray-200 bg-white text-sm w-2/5"
+              className="w-2/5 border-b border-gray-200 bg-white px-5 py-5 text-sm"
             >
               {index + 1}位
             </th>
-            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm w-2/5">
+            <td className="w-2/5 border-b border-gray-200 bg-white px-5 py-5 text-sm">
               {item.title}
             </td>
           </tr>

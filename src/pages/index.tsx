@@ -41,13 +41,13 @@ const Home: NextPage<Props> = ({ posts }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h2 className="text-lg font-bold mt-5">新着記事</h2>
+        <h2 className="mt-5 text-lg font-bold">新着記事</h2>
         {posts.map((post) => (
           <li key={post.slug}>
             <a href={post.slug}>{post.meta.title}</a>
           </li>
         ))}
-        <h2 className="text-lg font-bold mt-5">お知らせ</h2>
+        <h2 className="mt-5 text-lg font-bold">お知らせ</h2>
         <News userName={userName} />
       </main>
     </>
