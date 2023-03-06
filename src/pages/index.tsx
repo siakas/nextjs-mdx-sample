@@ -1,8 +1,35 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { promises as fs } from 'node:fs'
 import News from '@/contents/news.mdx'
 
-const Home: NextPage = () => {
+type Props = {
+  posts: Array<{
+    slug: string
+    meta: {
+      title: string
+    }
+  }>
+}
+
+export const getStaticProps = async () => {
+  const dataDir = 'src/articles'
+  const fileNames = await fs.readdir(dataDir)
+  const posts = []
+  for (const fileName of fileNames) {
+    const { meta } = await import(`@/articles/${fileName}`)
+    const slug = fileName.replace(/\.mdx$/, '')
+    posts.push({ slug, meta })
+  }
+
+  return {
+    props: {
+      posts,
+    },
+  }
+}
+
+const Home: NextPage<Props> = ({ posts }) => {
   const userName = 'ピルグリム'
 
   return (
@@ -15,6 +42,11 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <h2 className="text-lg font-bold mt-5">新着記事</h2>
+        {posts.map((post) => (
+          <li key={post.slug}>
+            <a href={post.slug}>{post.meta.title}</a>
+          </li>
+        ))}
         <h2 className="text-lg font-bold mt-5">お知らせ</h2>
         <News userName={userName} />
       </main>
